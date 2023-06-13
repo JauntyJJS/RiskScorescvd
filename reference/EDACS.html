@@ -156,7 +156,7 @@ EKG shows new ischemia or
 <span>  <span class="va">ecg.st.depression</span>,</span>
 <span>  <span class="va">ecg.twi</span>,</span>
 <span>  <span class="va">presentation_hstni</span>,</span>
-<span>  <span class="va">Δ2nd_hstni</span>,</span>
+<span>  <span class="va">second_hstni</span>,</span>
 <span>  <span class="va">classify</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -220,24 +220,12 @@ only 'male' or 'female'.</p></dd>
 <dd><p>a continuous numeric vector of the troponin levels</p></dd>
 
 
-<dt>typical_symptoms.num</dt>
-<dd><p>a numeric vector of the number of typical symptoms</p></dd>
-
-
-<dt>ecg.normal</dt>
-<dd><p>a binary numeric vector,  1 = yes and 0 = no</p></dd>
-
-
-<dt>abn.repolarisation</dt>
-<dd><p>a binary numeric vector,  1 = yes and 0 = no</p></dd>
-
-
-<dt>atherosclerotic.disease</dt>
+<dt>second_hstni</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no</p></dd>
 
 
-<dt>2nd_hstni</dt>
-<dd><p>a binary numeric vector, 1 = yes and 0 = no</p></dd>
+<dt>classify</dt>
+<dd><p>a logical parameter to indicate classification of Scores "TRUE" or none "FALSE"</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -250,7 +238,7 @@ and/or a vector of their classifications if indicated</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="va">results</span> <span class="op">&lt;-</span> <span class="va">cohort_xx</span> <span class="op">%&gt;%</span> <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>EDACS_score <span class="op">=</span> <span class="fu">EDACS</span><span class="op">(</span><span class="va">Age</span>, <span class="va">Gender</span>, <span class="va">diabetes</span>, <span class="va">smoker</span>, <span class="va">hypertension</span>, <span class="va">hyperlipidaemia</span>, <span class="va">family.history</span>, <span class="va">sweating</span>, <span class="va">pain.radiation</span>, <span class="va">pleuritic</span>, <span class="va">palpation</span>, <span class="va">ecg.st.depression</span>, <span class="va">ecg.twi</span>,  <span class="va">presentation_hstni</span>, <span class="va">Δ2nd_hstni</span>, classify <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="va">results</span> <span class="op">&lt;-</span> <span class="va">cohort_xx</span> <span class="op">%&gt;%</span> <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>EDACS_score <span class="op">=</span> <span class="fu">EDACS</span><span class="op">(</span><span class="va">Age</span>, <span class="va">Gender</span>, <span class="va">diabetes</span>, <span class="va">smoker</span>, <span class="va">hypertension</span>, <span class="va">hyperlipidaemia</span>, <span class="va">family.history</span>, <span class="va">sweating</span>, <span class="va">pain.radiation</span>, <span class="va">pleuritic</span>, <span class="va">palpation</span>, <span class="va">ecg.st.depression</span>, <span class="va">ecg.twi</span>,  <span class="va">presentation_hstni</span>, <span class="va">second_hstni</span>, classify <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'cohort_xx' not found</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
