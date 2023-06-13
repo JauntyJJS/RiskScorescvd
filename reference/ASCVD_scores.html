@@ -116,13 +116,13 @@ and their classifications</p>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># Call the function with the cohort_xx</span></span></span>
 <span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">ASCVD_scores</span><span class="op">(</span>data <span class="op">=</span> <span class="va">cohort_xx</span>, classify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in rename(., Age = Age_df, diabetes = diabetes_df, smoker = smoker_df,     hypertension = hypertension_df, family.history = family.history_df,     Gender = Gender_df, systolic.bp = systolic.bp_df, total.chol = total.chol_df,     total.hdl = total.hdl_df, Ethnicity = Ethnicity_df):</span> Can't rename columns that don't exist.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Column `family.history` doesn't exist.</span>
 <span class="r-in"><span><span class="co"># Print the results</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">ASCVD_score</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  0.0000  0.0750  0.3700  0.4606  0.8750  1.0000 </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">ASCVD_strat</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Very low risk      Low risk Moderate risk     High risk </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            20             5            11            64 </span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
