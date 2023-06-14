@@ -51,7 +51,23 @@ frame with two extra columns including the calculations and their classification
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">HEART_scores</span><span class="op">(</span><span class="va">data</span>, <span class="va">classify</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">HEART_scores</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  typical_symptoms.num <span class="op">=</span> <span class="va">typical_symptoms.num</span>,</span>
+<span>  ecg.normal <span class="op">=</span> <span class="va">ecg.normal</span>,</span>
+<span>  abn.repolarisation <span class="op">=</span> <span class="va">abn.repolarisation</span>,</span>
+<span>  ecg.st.depression <span class="op">=</span> <span class="va">ecg.st.depression</span>,</span>
+<span>  Age <span class="op">=</span> <span class="va">Age</span>,</span>
+<span>  diabetes <span class="op">=</span> <span class="va">diabetes</span>,</span>
+<span>  smoker <span class="op">=</span> <span class="va">smoker</span>,</span>
+<span>  hypertension <span class="op">=</span> <span class="va">hypertension</span>,</span>
+<span>  hyperlipidaemia <span class="op">=</span> <span class="va">hyperlipidaemia</span>,</span>
+<span>  family.history <span class="op">=</span> <span class="va">family.history</span>,</span>
+<span>  atherosclerotic.disease <span class="op">=</span> <span class="va">atherosclerotic.disease</span>,</span>
+<span>  presentation_hstni <span class="op">=</span> <span class="va">presentation_hstni</span>,</span>
+<span>  Gender <span class="op">=</span> <span class="va">Gender</span>,</span>
+<span>  <span class="va">classify</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -99,10 +115,7 @@ and their classifications</p>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># Call the function with the cohort_xx</span></span></span>
 <span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">HEART_scores</span><span class="op">(</span>data <span class="op">=</span> <span class="va">cohort_xx</span>, classify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in mutate(., HEART_score = HEART(typical_symptoms.num, ecg.normal,     abn.repolarisation, ecg.st.depression, Age, diabetes, smoker,     hypertension, hyperlipidaemia, family.history, atherosclerotic.disease,     presentation_hstni, Gender, classify = FALSE), HEART_strat = HEART(typical_symptoms.num,     ecg.normal, abn.repolarisation, ecg.st.depression, Age, diabetes,     smoker, hypertension, hyperlipidaemia, family.history, atherosclerotic.disease,     presentation_hstni, Gender, classify = classify) %&gt;% as.factor() %&gt;%     ordered(levels = c("Low risk", "Moderate risk", "High risk"))):</span> <span style="color: #00BBBB;">ℹ</span> In argument: `HEART_score = HEART(...)`.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> In row 1.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error:</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> object 'family.history' not found</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in env_get(env, name, default = missing_arg(), inherit = TRUE):</span> promise already under evaluation: recursive default argument reference or earlier problems?</span>
 <span class="r-in"><span><span class="co"># Print the results</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">HEART_score</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>

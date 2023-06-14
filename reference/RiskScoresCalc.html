@@ -50,150 +50,150 @@ frame with two extra columns for each risk score including their calculations an
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">calc_scores</span><span class="op">(</span></span>
 <span>  <span class="va">data</span>,</span>
-<span>  typical_symptoms.num_df <span class="op">=</span> <span class="st">"typical_symptoms.num"</span>,</span>
-<span>  ecg.normal_df <span class="op">=</span> <span class="st">"ecg.normal"</span>,</span>
-<span>  abn.repolarisation_df <span class="op">=</span> <span class="st">"abn.repolarisation"</span>,</span>
-<span>  ecg.st.depression_df <span class="op">=</span> <span class="st">"ecg.st.depression"</span>,</span>
-<span>  Age_df <span class="op">=</span> <span class="st">"Age"</span>,</span>
-<span>  diabetes_df <span class="op">=</span> <span class="st">"diabetes"</span>,</span>
-<span>  smoker_df <span class="op">=</span> <span class="st">"smoker"</span>,</span>
-<span>  hypertension_df <span class="op">=</span> <span class="st">"hypertension"</span>,</span>
-<span>  hyperlipidaemia_df <span class="op">=</span> <span class="st">"hyperlipidaemia"</span>,</span>
-<span>  family.history_df <span class="op">=</span> <span class="st">"family.history"</span>,</span>
-<span>  atherosclerotic.disease_df <span class="op">=</span> <span class="st">"atherosclerotic.disease"</span>,</span>
-<span>  presentation_hstni_df <span class="op">=</span> <span class="st">"presentation_hstni"</span>,</span>
-<span>  Gender_df <span class="op">=</span> <span class="st">"Gender"</span>,</span>
-<span>  sweating_df <span class="op">=</span> <span class="st">"sweating"</span>,</span>
-<span>  pain.radiation_df <span class="op">=</span> <span class="st">"pain.radiation"</span>,</span>
-<span>  pleuritic_df <span class="op">=</span> <span class="st">"pleuritic"</span>,</span>
-<span>  palpation_df <span class="op">=</span> <span class="st">"palpation"</span>,</span>
-<span>  ecg.twi_df <span class="op">=</span> <span class="st">"ecg.twi"</span>,</span>
-<span>  second_hstni_df <span class="op">=</span> <span class="st">"second_hstni"</span>,</span>
-<span>  killip.class_df <span class="op">=</span> <span class="st">"killip.class"</span>,</span>
-<span>  heart.rate_df <span class="op">=</span> <span class="st">"heart.rate"</span>,</span>
-<span>  systolic.bp_df <span class="op">=</span> <span class="st">"systolic.bp"</span>,</span>
-<span>  aspirin_df <span class="op">=</span> <span class="st">"aspirin"</span>,</span>
-<span>  number.of.episodes.24h_df <span class="op">=</span> <span class="st">"number.of.episodes.24h"</span>,</span>
-<span>  previous.pci_df <span class="op">=</span> <span class="st">"previous.pci"</span>,</span>
-<span>  previous.cabg_df <span class="op">=</span> <span class="st">"previous.cabg"</span>,</span>
-<span>  total.chol_df <span class="op">=</span> <span class="st">"total.chol"</span>,</span>
-<span>  total.hdl_df <span class="op">=</span> <span class="st">"total.hdl"</span>,</span>
-<span>  Ethnicity_df <span class="op">=</span> <span class="st">"Ethnicity"</span></span>
+<span>  typical_symptoms.num <span class="op">=</span> <span class="va">typical_symptoms.num</span>,</span>
+<span>  ecg.normal <span class="op">=</span> <span class="va">ecg.normal</span>,</span>
+<span>  abn.repolarisation <span class="op">=</span> <span class="va">abn.repolarisation</span>,</span>
+<span>  ecg.st.depression <span class="op">=</span> <span class="va">ecg.st.depression</span>,</span>
+<span>  Age <span class="op">=</span> <span class="va">Age</span>,</span>
+<span>  diabetes <span class="op">=</span> <span class="va">diabetes</span>,</span>
+<span>  smoker <span class="op">=</span> <span class="va">smoker</span>,</span>
+<span>  hypertension <span class="op">=</span> <span class="va">hypertension</span>,</span>
+<span>  hyperlipidaemia <span class="op">=</span> <span class="va">hyperlipidaemia</span>,</span>
+<span>  family.history <span class="op">=</span> <span class="va">family.history</span>,</span>
+<span>  atherosclerotic.disease <span class="op">=</span> <span class="va">atherosclerotic.disease</span>,</span>
+<span>  presentation_hstni <span class="op">=</span> <span class="va">presentation_hstni</span>,</span>
+<span>  Gender <span class="op">=</span> <span class="va">Gender</span>,</span>
+<span>  sweating <span class="op">=</span> <span class="va">sweating</span>,</span>
+<span>  pain.radiation <span class="op">=</span> <span class="va">pain.radiation</span>,</span>
+<span>  pleuritic <span class="op">=</span> <span class="va">pleuritic</span>,</span>
+<span>  palpation <span class="op">=</span> <span class="va">palpation</span>,</span>
+<span>  ecg.twi <span class="op">=</span> <span class="va">ecg.twi</span>,</span>
+<span>  second_hstni <span class="op">=</span> <span class="va">second_hstni</span>,</span>
+<span>  killip.class <span class="op">=</span> <span class="va">killip.class</span>,</span>
+<span>  heart.rate <span class="op">=</span> <span class="va">heart.rate</span>,</span>
+<span>  systolic.bp <span class="op">=</span> <span class="va">systolic.bp</span>,</span>
+<span>  aspirin <span class="op">=</span> <span class="va">aspirin</span>,</span>
+<span>  number.of.episodes.24h <span class="op">=</span> <span class="va">number.of.episodes.24h</span>,</span>
+<span>  previous.pci <span class="op">=</span> <span class="va">previous.pci</span>,</span>
+<span>  previous.cabg <span class="op">=</span> <span class="va">previous.cabg</span>,</span>
+<span>  total.chol <span class="op">=</span> <span class="va">total.chol</span>,</span>
+<span>  total.hdl <span class="op">=</span> <span class="va">total.hdl</span>,</span>
+<span>  Ethnicity <span class="op">=</span> <span class="va">Ethnicity</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>typical_symptoms.num_df</dt>
+    <dl><dt>typical_symptoms.num</dt>
 <dd><p>a numeric vector of the number of typical symptoms; renames alternative column name</p></dd>
 
 
-<dt>ecg.normal_df</dt>
+<dt>ecg.normal</dt>
 <dd><p>a binary numeric vector,  1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>abn.repolarisation_df</dt>
+<dt>abn.repolarisation</dt>
 <dd><p>a binary numeric vector,  1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>ecg.st.depression_df</dt>
+<dt>ecg.st.depression</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>Age_df</dt>
+<dt>Age</dt>
 <dd><p>a numeric vector of age values, in years; renames alternative column name</p></dd>
 
 
-<dt>diabetes_df</dt>
+<dt>diabetes</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>smoker_df</dt>
+<dt>smoker</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>hypertension_df</dt>
+<dt>hypertension</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>hyperlipidaemia_df</dt>
+<dt>hyperlipidaemia</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>family.history_df</dt>
+<dt>family.history</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>atherosclerotic.disease_df</dt>
+<dt>atherosclerotic.disease</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>presentation_hstni_df</dt>
+<dt>presentation_hstni</dt>
 <dd><p>a continuous numeric vector of the troponin levels; renames alternative column name</p></dd>
 
 
-<dt>Gender_df</dt>
+<dt>Gender</dt>
 <dd><p>a binary character vector of sex values. Categories should include
 only 'male' or 'female'; renames alternative column name</p></dd>
 
 
-<dt>sweating_df</dt>
+<dt>sweating</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>pain.radiation_df</dt>
+<dt>pain.radiation</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>pleuritic_df</dt>
+<dt>pleuritic</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>palpation_df</dt>
+<dt>palpation</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>ecg.twi_df</dt>
+<dt>ecg.twi</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>second_hstni_df</dt>
+<dt>second_hstni</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>killip.class_df</dt>
+<dt>killip.class</dt>
 <dd><p>a numeric vector of killip class values, 1 to 4; renames alternative column name</p></dd>
 
 
-<dt>heart.rate_df</dt>
+<dt>heart.rate</dt>
 <dd><p>a numeric vector of heart rate continuous values; renames alternative column name</p></dd>
 
 
-<dt>systolic.bp_df</dt>
+<dt>systolic.bp</dt>
 <dd><p>a numeric vector of systolic blood pressure continuous values; renames alternative column name</p></dd>
 
 
-<dt>aspirin_df</dt>
+<dt>aspirin</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>number.of.episodes.24h_df</dt>
+<dt>number.of.episodes.24h</dt>
 <dd><p>a numeric vector of number of angina episodes in 24 hours; renames alternative column name</p></dd>
 
 
-<dt>previous.pci_df</dt>
+<dt>previous.pci</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>previous.cabg_df</dt>
+<dt>previous.cabg</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
-<dt>total.chol_df</dt>
+<dt>total.chol</dt>
 <dd><p>a numeric vector of total cholesterol values, in mmol/L; renames alternative column name</p></dd>
 
 
-<dt>total.hdl_df</dt>
+<dt>total.hdl</dt>
 <dd><p>a numeric vector of total high density lipoprotein HDL values, in mmol/L; renames alternative column name</p></dd>
 
 </dl></div>
