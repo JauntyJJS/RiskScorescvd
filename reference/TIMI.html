@@ -325,14 +325,13 @@ and their classifications</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Call the function with the cohort_xx</span></span></span>
 <span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">TIMI_scores</span><span class="op">(</span>data <span class="op">=</span> <span class="va">cohort_xx</span>, classify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in rename(., Age = Age, hypertension = hypertension, hyperlipidaemia = hyperlipidaemia,     family.history = family.history, diabetes = diabetes, smoker = smoker,     previous.pci = previous.pci, previous.cabg = previous.pci,     aspirin = aspirin, number.of.episodes.24h = number.of.episodes.24h,     ecg.st.depression = ecg.st.depression, presentation_hstni = presentation_hstni,     Gender = Gender):</span> Names must be unique.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> These names are duplicated:</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span>   * "previous.cabg" at locations 25 and 26.</span>
 <span class="r-in"><span><span class="co"># Print the results</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">TIMI_score</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    2.00    4.00    5.00    4.49    5.00    7.00 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">TIMI_strat</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Very low risk      Low risk Moderate risk     High risk </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             0             6            41            53 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
