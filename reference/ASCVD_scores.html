@@ -74,8 +74,45 @@ Gender, Ethnicity, Age, total.chol, total.hd,
 systolic.bp,hypertension, smoker, diabetes</p></dd>
 
 
+<dt>Gender</dt>
+<dd><p>a binary character vector of sex values. Categories should include
+only 'male' or 'female'.</p></dd>
+
+
+<dt>Ethnicity</dt>
+<dd><p>a character vector, 'white', 'black', 'asian', or other</p></dd>
+
+
+<dt>Age</dt>
+<dd><p>a numeric vector of age values, in years</p></dd>
+
+
+<dt>total.chol</dt>
+<dd><p>a numeric vector of total cholesterol values, in mmol/L</p></dd>
+
+
+<dt>total.hdl</dt>
+<dd><p>a numeric vector of total high density lipoprotein HDL values, in mmol/L</p></dd>
+
+
+<dt>systolic.bp</dt>
+<dd><p>a numeric vector of systolic blood pressure continuous values</p></dd>
+
+
+<dt>hypertension</dt>
+<dd><p>a binary numeric vector, 1 = yes and 0 = no</p></dd>
+
+
+<dt>smoker</dt>
+<dd><p>a binary numeric vector, 1 = yes and 0 = no</p></dd>
+
+
+<dt>diabetes</dt>
+<dd><p>a binary numeric vector, 1 = yes and 0 = no</p></dd>
+
+
 <dt>classify</dt>
-<dd><p>set TRUE if wish to add a column with the scores' categories</p></dd>
+<dd><p>a logical parameter to indicate classification of Scores "TRUE" or none "FALSE"</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -131,10 +168,10 @@ and their classifications</p>
 <span class="r-in"><span><span class="co"># Print the results</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">ASCVD_score</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  0.0000  0.0875  0.3900  0.4604  0.8700  1.0000 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0.0000  0.0950  0.3500  0.4290  0.7875  1.0000 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">ASCVD_strat</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Very low risk      Low risk Moderate risk     High risk </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            17             5            16            62 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            22             2            13            63 </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
