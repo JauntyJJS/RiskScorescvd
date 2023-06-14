@@ -201,8 +201,7 @@ frame with two extra columns including the calculations and their classification
 
 
 <dt>Gender</dt>
-<dd><p>a binary character vector of sex values. Categories should include
-only 'male' or 'female'.</p></dd>
+<dd><p>a binary character vector of sex values. Categories should include only 'male' or 'female'</p></dd>
 
 
 <dt>classify</dt>
@@ -235,7 +234,10 @@ and their classifications</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span>  <span class="va">results</span> <span class="op">&lt;-</span> <span class="va">cohort_xx</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html" class="external-link">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>TIMI_score <span class="op">=</span> <span class="fu">TIMI</span><span class="op">(</span><span class="va">Age</span>, <span class="va">hypertension</span>, <span class="va">hyperlipidaemia</span>, <span class="va">family.history</span>, <span class="va">diabetes</span>, <span class="va">smoker</span>, <span class="va">previous.pci</span>, <span class="va">previous.cabg</span>, <span class="va">aspirin</span>, <span class="va">number.of.episodes.24h</span>, <span class="va">ecg.st.depression</span>, <span class="va">presentation_hstni</span>, <span class="va">Gender</span>, classify <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="va">results</span> <span class="op">&lt;-</span> <span class="va">cohort_xx</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html" class="external-link">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>TIMI_score <span class="op">=</span> <span class="fu">TIMI</span><span class="op">(</span><span class="va">Age</span>, <span class="va">hypertension</span>, <span class="va">hyperlipidaemia</span>, <span class="va">family.history</span>,</span></span>
+<span class="r-in"><span>  <span class="va">diabetes</span>, <span class="va">smoker</span>, <span class="va">previous.pci</span>, <span class="va">previous.cabg</span>, <span class="va">aspirin</span>, <span class="va">number.of.episodes.24h</span>,</span></span>
+<span class="r-in"><span>  <span class="va">ecg.st.depression</span>, <span class="va">presentation_hstni</span>, <span class="va">Gender</span>, classify <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'cohort_xx' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
@@ -260,12 +262,12 @@ and their classifications</p>
 <span class="r-in"><span>  Gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span><span class="op">)</span>, <span class="va">num_rows</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># Call the function with the cohort_xx</span></span></span>
-<span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="HEART_scores.html">HEART_scores</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">cohort_xx</span>, classify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">TIMI_scores</span><span class="op">(</span>data <span class="op">=</span> <span class="va">cohort_xx</span>, classify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in env_get(env, name, default = missing_arg(), inherit = TRUE):</span> promise already under evaluation: recursive default argument reference or earlier problems?</span>
 <span class="r-in"><span><span class="co"># Print the results</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">HEART_score</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">TIMI_score</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">HEART_strat</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">TIMI_strat</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'result' not found</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
