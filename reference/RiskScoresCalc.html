@@ -75,6 +75,7 @@ frame with two extra columns for each risk score including their calculations an
 <span>  aspirin <span class="op">=</span> <span class="va">aspirin</span>,</span>
 <span>  number.of.episodes.24h <span class="op">=</span> <span class="va">number.of.episodes.24h</span>,</span>
 <span>  previous.pci <span class="op">=</span> <span class="va">previous.pci</span>,</span>
+<span>  creat <span class="op">=</span> <span class="va">creat</span>,</span>
 <span>  previous.cabg <span class="op">=</span> <span class="va">previous.cabg</span>,</span>
 <span>  total.chol <span class="op">=</span> <span class="va">total.chol</span>,</span>
 <span>  total.hdl <span class="op">=</span> <span class="va">total.hdl</span>,</span>
@@ -84,7 +85,11 @@ frame with two extra columns for each risk score including their calculations an
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>typical_symptoms.num</dt>
+    <dl><dt>data</dt>
+<dd><p>A data frame with all the variables needed for calculation:</p></dd>
+
+
+<dt>typical_symptoms.num</dt>
 <dd><p>a numeric vector of the number of typical symptoms; renames alternative column name</p></dd>
 
 
@@ -185,6 +190,10 @@ only 'male' or 'female'; renames alternative column name</p></dd>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
 
+<dt>creat</dt>
+<dd><p>a continuous numeric vector of the creatine levels</p></dd>
+
+
 <dt>previous.cabg</dt>
 <dd><p>a binary numeric vector, 1 = yes and 0 = no; renames alternative column name</p></dd>
 
@@ -197,8 +206,8 @@ only 'male' or 'female'; renames alternative column name</p></dd>
 <dd><p>a numeric vector of total high density lipoprotein HDL values, in mmol/L; renames alternative column name</p></dd>
 
 
-<dt>creat</dt>
-<dd><p>a continuous numeric vector of the creatine levels</p></dd>
+<dt>Ethnicity</dt>
+<dd><p>a character vector, 'white', 'black', 'asian', or other</p></dd>
 
 </dl></div>
     <div class="section level2">
