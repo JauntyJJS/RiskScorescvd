@@ -82,15 +82,17 @@
 <li>SCORE2/OP</li>
 <li>ASCVD</li>
 </ul>
+<p>NOTE: Troponin I values should be used. Additional functions for Troponin T are under development</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of RiskScorescvd from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install from CRAN with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Install from CRAN</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"RiskScorescvd"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"RiskScorescvd"</span><span class="op">)</span></span></code></pre></div>
+<p>You can install the development version of RiskScorescvd from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"dvicencio/RiskScorescvd"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -102,7 +104,7 @@
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>This is a basic example of how the data set should look to calculate all risk scores available in the package:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dvicencio/RiskScorescvd" class="external-link">RiskScorescvd</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: PooledCohort</span></span>
 <span><span class="co"># Create a data frame or list with the necessary variables</span></span>
@@ -146,43 +148,43 @@
 <span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">cohort_xx</span><span class="op">)</span></span>
 <span><span class="co">#&gt; 'data.frame':    100 obs. of  31 variables:</span></span>
-<span><span class="co">#&gt;  $ typical_symptoms.num   : num  0 1 0 2 6 1 6 2 5 2 ...</span></span>
-<span><span class="co">#&gt;  $ ecg.normal             : num  1 1 1 0 1 1 0 1 1 1 ...</span></span>
-<span><span class="co">#&gt;  $ abn.repolarisation     : num  0 1 1 1 1 1 0 1 1 0 ...</span></span>
-<span><span class="co">#&gt;  $ ecg.st.depression      : num  1 1 0 1 0 0 1 0 1 0 ...</span></span>
-<span><span class="co">#&gt;  $ Age                    : num  67 58 78 57 38 59 30 59 51 34 ...</span></span>
-<span><span class="co">#&gt;  $ diabetes               : num  0 0 1 1 1 1 0 0 1 0 ...</span></span>
-<span><span class="co">#&gt;  $ smoker                 : num  1 1 1 0 0 1 1 1 0 0 ...</span></span>
-<span><span class="co">#&gt;  $ hypertension           : num  1 1 1 0 1 0 0 1 0 0 ...</span></span>
-<span><span class="co">#&gt;  $ hyperlipidaemia        : num  1 1 0 0 0 0 1 0 0 1 ...</span></span>
-<span><span class="co">#&gt;  $ family.history         : num  0 1 1 0 0 0 1 0 1 1 ...</span></span>
-<span><span class="co">#&gt;  $ atherosclerotic.disease: num  1 1 1 0 1 1 0 0 1 0 ...</span></span>
-<span><span class="co">#&gt;  $ presentation_hstni     : num  37 57 49 66 20 62 68 48 93 20 ...</span></span>
-<span><span class="co">#&gt;  $ Gender                 : chr  "male" "male" "female" "male" ...</span></span>
-<span><span class="co">#&gt;  $ sweating               : num  0 1 1 1 1 1 0 0 0 0 ...</span></span>
-<span><span class="co">#&gt;  $ pain.radiation         : num  1 1 1 1 1 1 1 0 1 1 ...</span></span>
-<span><span class="co">#&gt;  $ pleuritic              : num  1 0 0 1 1 0 0 0 1 1 ...</span></span>
-<span><span class="co">#&gt;  $ palpation              : num  0 1 0 1 1 0 1 0 1 1 ...</span></span>
-<span><span class="co">#&gt;  $ ecg.twi                : num  1 1 1 0 1 0 1 1 0 1 ...</span></span>
-<span><span class="co">#&gt;  $ second_hstni           : num  88 37 177 65 118 157 19 171 100 157 ...</span></span>
-<span><span class="co">#&gt;  $ killip.class           : num  4 1 4 1 1 4 4 4 2 4 ...</span></span>
-<span><span class="co">#&gt;  $ systolic.bp            : num  42 236 225 131 295 103 40 220 173 200 ...</span></span>
-<span><span class="co">#&gt;  $ heart.rate             : num  116 158 291 231 271 12 240 39 199 76 ...</span></span>
-<span><span class="co">#&gt;  $ creat                  : num  0 0 2 3 4 0 1 1 4 4 ...</span></span>
-<span><span class="co">#&gt;  $ cardiac.arrest         : num  0 1 1 0 1 0 1 1 0 0 ...</span></span>
-<span><span class="co">#&gt;  $ previous.pci           : num  0 0 1 1 1 1 0 0 1 0 ...</span></span>
-<span><span class="co">#&gt;  $ previous.cabg          : num  0 1 0 1 0 0 1 0 1 1 ...</span></span>
-<span><span class="co">#&gt;  $ aspirin                : num  1 0 1 0 0 1 1 1 1 1 ...</span></span>
-<span><span class="co">#&gt;  $ number.of.episodes.24h : num  2 15 7 11 10 6 19 1 12 13 ...</span></span>
-<span><span class="co">#&gt;  $ total.chol             : num  33 45 67 82 36 41 27 84 47 72 ...</span></span>
-<span><span class="co">#&gt;  $ total.hdl              : num  5 2 3 5 5 3 4 3 2 4 ...</span></span>
-<span><span class="co">#&gt;  $ Ethnicity              : chr  "other" "white" "black" "other" ...</span></span></code></pre></div>
+<span><span class="co">#&gt;  $ typical_symptoms.num   : num  2 0 4 4 1 5 2 1 4 5 ...</span></span>
+<span><span class="co">#&gt;  $ ecg.normal             : num  1 0 1 1 0 1 1 0 1 1 ...</span></span>
+<span><span class="co">#&gt;  $ abn.repolarisation     : num  0 0 1 0 1 1 0 0 0 0 ...</span></span>
+<span><span class="co">#&gt;  $ ecg.st.depression      : num  0 1 1 0 1 0 1 0 1 1 ...</span></span>
+<span><span class="co">#&gt;  $ Age                    : num  67 37 34 80 41 41 47 46 52 57 ...</span></span>
+<span><span class="co">#&gt;  $ diabetes               : num  1 0 1 0 0 0 0 0 1 1 ...</span></span>
+<span><span class="co">#&gt;  $ smoker                 : num  1 1 1 1 0 0 0 1 0 0 ...</span></span>
+<span><span class="co">#&gt;  $ hypertension           : num  0 1 1 0 0 0 1 1 0 0 ...</span></span>
+<span><span class="co">#&gt;  $ hyperlipidaemia        : num  0 0 1 1 0 0 0 0 0 0 ...</span></span>
+<span><span class="co">#&gt;  $ family.history         : num  1 1 1 1 0 0 0 1 0 0 ...</span></span>
+<span><span class="co">#&gt;  $ atherosclerotic.disease: num  1 1 1 1 1 1 1 1 0 0 ...</span></span>
+<span><span class="co">#&gt;  $ presentation_hstni     : num  54 51 72 86 82 50 80 74 21 31 ...</span></span>
+<span><span class="co">#&gt;  $ Gender                 : chr  "female" "male" "female" "male" ...</span></span>
+<span><span class="co">#&gt;  $ sweating               : num  1 0 1 0 0 0 0 0 1 1 ...</span></span>
+<span><span class="co">#&gt;  $ pain.radiation         : num  0 0 0 1 0 0 1 1 0 1 ...</span></span>
+<span><span class="co">#&gt;  $ pleuritic              : num  1 1 1 1 0 0 1 0 1 0 ...</span></span>
+<span><span class="co">#&gt;  $ palpation              : num  0 1 0 1 1 0 1 1 1 1 ...</span></span>
+<span><span class="co">#&gt;  $ ecg.twi                : num  1 1 1 0 1 1 1 1 0 1 ...</span></span>
+<span><span class="co">#&gt;  $ second_hstni           : num  197 83 119 64 172 169 176 134 83 54 ...</span></span>
+<span><span class="co">#&gt;  $ killip.class           : num  3 4 4 4 2 3 3 2 1 2 ...</span></span>
+<span><span class="co">#&gt;  $ systolic.bp            : num  202 77 216 138 256 197 197 203 121 41 ...</span></span>
+<span><span class="co">#&gt;  $ heart.rate             : num  298 91 44 197 70 291 237 178 232 24 ...</span></span>
+<span><span class="co">#&gt;  $ creat                  : num  0 3 0 1 2 2 2 0 1 4 ...</span></span>
+<span><span class="co">#&gt;  $ cardiac.arrest         : num  0 0 0 1 0 1 1 0 1 0 ...</span></span>
+<span><span class="co">#&gt;  $ previous.pci           : num  1 1 0 0 0 0 0 0 0 1 ...</span></span>
+<span><span class="co">#&gt;  $ previous.cabg          : num  0 1 1 1 1 1 0 0 1 0 ...</span></span>
+<span><span class="co">#&gt;  $ aspirin                : num  1 1 1 0 0 1 0 1 1 0 ...</span></span>
+<span><span class="co">#&gt;  $ number.of.episodes.24h : num  7 0 17 9 10 8 5 17 20 11 ...</span></span>
+<span><span class="co">#&gt;  $ total.chol             : num  89 89 20 96 25 17 80 68 72 96 ...</span></span>
+<span><span class="co">#&gt;  $ total.hdl              : num  4 3 2 2 3 5 2 2 2 5 ...</span></span>
+<span><span class="co">#&gt;  $ Ethnicity              : chr  "other" "black" "asian" "asian" ...</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calculation-and-results">Calculation and Results<a class="anchor" aria-label="anchor" href="#calculation-and-results"></a>
 </h2>
 <p>This is a basic example of how to calculate all risk scores available in the package and create a new data set with 12 new variables of the calculated and classified risk scores:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Call the function with the cohort_xx to calculate all risk scores available in the package</span></span>
 <span><span class="va">new_data_frame</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/RiskScoresCalc.html">calc_scores</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">cohort_xx</span><span class="op">)</span></span>
 <span> </span>
@@ -195,37 +197,37 @@
 <span><span class="co">#&gt; # Rowwise: </span></span>
 <span><span class="co">#&gt;   HEART_score HEART_strat   EDACS_score EDACS_strat  GRACE_score GRACE_strat  </span></span>
 <span><span class="co">#&gt;         &lt;dbl&gt; &lt;ord&gt;               &lt;dbl&gt; &lt;ord&gt;              &lt;dbl&gt; &lt;ord&gt;        </span></span>
-<span><span class="co">#&gt; 1           7 High risk              19 Not low risk         184 High risk    </span></span>
-<span><span class="co">#&gt; 2           6 Moderate risk          16 Not low risk          96 Moderate risk</span></span>
-<span><span class="co">#&gt; 3           7 High risk              24 Not low risk         170 High risk    </span></span>
-<span><span class="co">#&gt; 4           6 Moderate risk          12 Not low risk         127 High risk    </span></span>
-<span><span class="co">#&gt; 5           6 Moderate risk           0 Not low risk          53 Low risk     </span></span>
-<span><span class="co">#&gt; 6           6 Moderate risk          16 Not low risk         133 High risk    </span></span>
+<span><span class="co">#&gt; 1           7 High risk              11 Not low risk         134 High risk    </span></span>
+<span><span class="co">#&gt; 2           5 Moderate risk           2 Not low risk         123 High risk    </span></span>
+<span><span class="co">#&gt; 3           7 High risk               5 Not low risk          74 Low risk     </span></span>
+<span><span class="co">#&gt; 4           6 Moderate risk          17 Not low risk         197 High risk    </span></span>
+<span><span class="co">#&gt; 5           5 Moderate risk           2 Not low risk          56 Low risk     </span></span>
+<span><span class="co">#&gt; 6           6 Moderate risk           8 Not low risk          88 Moderate risk</span></span>
 <span><span class="co">#&gt; # ℹ 6 more variables: TIMI_score &lt;dbl&gt;, TIMI_strat &lt;ord&gt;, SCORE2_score &lt;dbl&gt;,</span></span>
 <span><span class="co">#&gt; #   SCORE2_strat &lt;ord&gt;, ASCVD_score &lt;dbl&gt;, ASCVD_strat &lt;ord&gt;</span></span>
 <span></span>
 <span><span class="co"># Create a summary of them to obtain an initial idea of distribution</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">All_scores</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   HEART_score           HEART_strat  EDACS_score          EDACS_strat </span></span>
-<span><span class="co">#&gt;  Min.   : 2.00   Low risk     : 4   Min.   :-8.00   Low risk    :  0  </span></span>
-<span><span class="co">#&gt;  1st Qu.: 5.00   Moderate risk:49   1st Qu.: 5.00   Not low risk:100  </span></span>
-<span><span class="co">#&gt;  Median : 6.00   High risk    :47   Median : 9.00                     </span></span>
-<span><span class="co">#&gt;  Mean   : 6.34                      Mean   : 9.43                     </span></span>
-<span><span class="co">#&gt;  3rd Qu.: 7.00                      3rd Qu.:14.00                     </span></span>
-<span><span class="co">#&gt;  Max.   :10.00                      Max.   :30.00                     </span></span>
-<span><span class="co">#&gt;   GRACE_score            GRACE_strat   TIMI_score           TIMI_strat</span></span>
-<span><span class="co">#&gt;  Min.   : 33.00   Low risk     :27   Min.   :1.00   Very low risk: 0  </span></span>
-<span><span class="co">#&gt;  1st Qu.: 84.75   Moderate risk:28   1st Qu.:3.00   Low risk     : 8  </span></span>
-<span><span class="co">#&gt;  Median :111.50   High risk    :45   Median :4.00   Moderate risk:53  </span></span>
-<span><span class="co">#&gt;  Mean   :110.50                      Mean   :4.18   High risk    :39  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:137.25                      3rd Qu.:5.00                     </span></span>
-<span><span class="co">#&gt;  Max.   :201.00                      Max.   :6.00                     </span></span>
+<span><span class="co">#&gt;  Min.   : 2.00   Low risk     : 3   Min.   :-8.00   Low risk    :  0  </span></span>
+<span><span class="co">#&gt;  1st Qu.: 6.00   Moderate risk:53   1st Qu.: 5.75   Not low risk:100  </span></span>
+<span><span class="co">#&gt;  Median : 6.00   High risk    :44   Median : 9.50                     </span></span>
+<span><span class="co">#&gt;  Mean   : 6.36                      Mean   :10.08                     </span></span>
+<span><span class="co">#&gt;  3rd Qu.: 7.00                      3rd Qu.:15.00                     </span></span>
+<span><span class="co">#&gt;  Max.   :10.00                      Max.   :25.00                     </span></span>
+<span><span class="co">#&gt;   GRACE_score           GRACE_strat   TIMI_score           TIMI_strat</span></span>
+<span><span class="co">#&gt;  Min.   : 34.0   Low risk     :23   Min.   :1.00   Very low risk: 0  </span></span>
+<span><span class="co">#&gt;  1st Qu.: 90.5   Moderate risk:32   1st Qu.:4.00   Low risk     : 4  </span></span>
+<span><span class="co">#&gt;  Median :114.5   High risk    :45   Median :4.00   Moderate risk:50  </span></span>
+<span><span class="co">#&gt;  Mean   :116.9                      Mean   :4.44   High risk    :46  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:146.0                      3rd Qu.:5.00                     </span></span>
+<span><span class="co">#&gt;  Max.   :202.0                      Max.   :7.00                     </span></span>
 <span><span class="co">#&gt;   SCORE2_score           SCORE2_strat  ASCVD_score            ASCVD_strat</span></span>
-<span><span class="co">#&gt;  Min.   :  1.00   Very low risk: 0    Min.   :0.0000   Very low risk:12  </span></span>
-<span><span class="co">#&gt;  1st Qu.: 47.50   Low risk     : 5    1st Qu.:0.1700   Low risk     : 3  </span></span>
-<span><span class="co">#&gt;  Median : 99.00   Moderate risk: 4    Median :0.4650   Moderate risk:13  </span></span>
-<span><span class="co">#&gt;  Mean   : 74.05   High risk    :91    Mean   :0.5081   High risk    :72  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:100.00                       3rd Qu.:0.9000                     </span></span>
+<span><span class="co">#&gt;  Min.   :  1.00   Very low risk: 0    Min.   :0.0000   Very low risk:13  </span></span>
+<span><span class="co">#&gt;  1st Qu.: 31.75   Low risk     : 6    1st Qu.:0.1500   Low risk     : 5  </span></span>
+<span><span class="co">#&gt;  Median : 92.50   Moderate risk: 6    Median :0.3550   Moderate risk:16  </span></span>
+<span><span class="co">#&gt;  Mean   : 67.68   High risk    :88    Mean   :0.4225   High risk    :66  </span></span>
+<span><span class="co">#&gt;  3rd Qu.:100.00                       3rd Qu.:0.7075                     </span></span>
 <span><span class="co">#&gt;  Max.   :100.00                       Max.   :1.0000</span></span></code></pre></div>
 </div>
 </div>
@@ -267,7 +269,6 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/dvicencio/RiskScorescvd/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/dvicencio/RiskScorescvd/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://cran.r-project.org/package=RiskScorescvd" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/grand-total/RiskScorescvd?color=green"></a></li>
 <li><a href="https://www.linkedin.com/in/daniel-perez-vicencio-700549a0/" class="external-link"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="Connect"></a></li>
 </ul>
 </div>
